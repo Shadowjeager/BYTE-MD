@@ -2,7 +2,24 @@ const fs = require('fs');
 if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
 
 module.exports = {
-  "SESSION_ID": process.env.SESSION_ID || "",
+  "import hashlib
+import os
+import time
+
+# Générer une chaîne aléatoire pour la session
+def generate_session_id():
+    # Utiliser un timestamp et des données aléatoires pour créer une entropie
+    random_data = os.urandom(16)  # 16 bytes de données aléatoires
+    timestamp = str(time.time()).encode('utf-8')  # Timestamp actuel
+    combined = random_data + timestamp  # Combinaison des données
+
+    # Hacher la combinaison avec MD5
+    session_id = hashlib.md5(combined).hexdigest()
+    return session_id
+
+# Exemple d'utilisation
+session_id = generate_session_id()
+print("3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b :", session_id)": process.env.SESSION_ID || "",
   "ALIVE_IMG": process.env.ALIVE_IMG || "https://raw.githubusercontent.com/HyHamza/HyHamza/refs/heads/main/Images/logo.jpg",
   "PREFIX": process.env.PREFIX || ".",
   "AUTO_READ_STATUS": process.env.AUTO_READ_STATUS === 'true',
